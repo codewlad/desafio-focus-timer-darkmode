@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusTimer - DarkMode</title>
+    <link rel="icon" type="image/png" href="./assets/html-coding.png" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="./assets/btn-light.svg" alt="Botão com o desenho de um sol, para ligar o modo escuro" id="btnDarkMode">
+    </header>
+
+    <main>
+        <div id="wrapperTimer">
+            <div id="timer">
+                <span class="minutes">00</span><span>:</span><span class="seconds">00</span>
+            </div>
+            <div id="controls">
+                <button class="btnPlay">
+                    <img src="./assets/btn-play.svg" alt="Botão para o timer">
+                </button>
+                <button class="btnPause hide">
+                    <img src="./assets/btn-pause.svg" alt="Botão para pausar o timer">
+                </button>
+                <button class="btnStop">
+                    <img src="./assets/btn-stop.svg" alt="Botão para parar o timer">
+                </button>
+                <button class="btnIncrease">
+                    <img src="./assets/btn-increase.svg" alt="Botão para aumentar o tempo do timer">
+                </button>
+                <button class="btnDecrease">
+                    <img src="./assets/btn-decrease.svg" alt="Botão para diminuir o tempo do timer">
+                </button>
+                <button class="btnToggleSetTheMinutes">
+                    <img src="./assets/btn-set.svg" alt="Botão para definir o tempo do timer">
+                </button>
+            </div>
+            <div id="setTheMinutes" class="hide">
+                <label for="inputMinutes">Informe os minutos (max: 60):</label>
+                <div>
+                    <input type="number" name="inputMinutes" id="inputMinutes" min="1" max="60" value="1"/>
+                    <button class="btnSetTheMinutes">Confirmar</button>
+                </div>
+            </div>
+        </div>
+        <div id="cards">
+            <div id="btnForest" class="card">
+                <img src="./assets/btn-forest.svg" alt="Botão para tocar o som de floresta">
+                <input id="volume-control-Forest" type="range" min="0" max="100" value="50">
+            </div>
+            <div id="btnRain" class="card">
+                <img src="./assets/btn-rain.svg" alt="Botão para tocar o som de chuva">
+                <input id="volume-control-Rain" type="range" min="0" max="100" value="50">
+            </div>
+            <div id="btnCoffeeShop" class="card">
+                <img src="./assets/btn-coffeeshop.svg" alt="Botão para tocar o som de cafeteria">
+                <input id="volume-control-CoffeeShop" type="range" min="0" max="100" value="50">
+            </div>
+            <div id="btnFireplace" class="card">
+                <img src="./assets/btn-fireplace.svg" alt="Botão para tocar o som de lareira">
+                <input id="volume-control-Fireplace" type="range" min="0" max="100" value="50">
+            </div>
+        </div>
+    </main>
+    
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

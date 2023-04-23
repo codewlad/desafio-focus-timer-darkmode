@@ -1,0 +1,212 @@
+:root {
+    font-size: 62.5%;
+
+    --fc-timer: #323238;
+    --bg-card: #E1E1E6;
+    --bg-cardHover: #C9C9C9;
+    --bg-cardSelected: #02799D;
+    --bg-cardSelectedHover: #006483;
+    --bg-body: #FFF;
+}
+
+.darkMode:root {
+    font-size: 62.5%;
+
+    --fc-timer: #FFF;
+    --bg-card: #29292E;
+    --bg-cardHover: #39393f;
+    --bg-cardSelected: #0A3442;
+    --bg-cardSelectedHover: #0d4253;
+    --bg-body: #121214;
+}
+
+.darkModeImg {
+    filter: brightness(0%) invert(100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    background-color: var(--bg-body);
+}
+
+header {
+    position: absolute;
+    top: 6.4rem;
+    right: 6.4rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    max-width: 100rem;
+    place-content: center;
+    margin: 0 auto;
+}
+
+#wrapperTimer {
+    display: grid;
+    justify-self: center;
+    place-content: center;
+    max-width: 32rem;
+    width: 100%;
+}
+
+#timer {
+    font-size: 12.6166rem;
+    line-height: 14.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--fc-timer);
+    margin-bottom: 3.5rem;
+}
+
+#controls {
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+}
+
+#controls button {
+    background: none;
+    border: none;
+    max-width: 4.8rem;
+    max-height: 4.8rem;
+    cursor: pointer;
+}
+
+#controls button:hover {
+    opacity: 0.7;
+}
+
+#controls button img {
+    width: 100%;
+    height: 100%;
+}
+
+#setTheMinutes {
+    margin-top: 1.5rem;
+}
+
+#setTheMinutes label {
+    display: block;
+    text-align: center;    
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+#setTheMinutes div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#setTheMinutes input {
+    width: 7rem;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 2rem;
+    border: 1px solid var(--fc-timer);
+    color: var(--fc-timer);
+    text-align: center;
+}
+
+#setTheMinutes button {
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 2rem;
+    border: 1px solid var(--fc-timer);
+    background-color: var(--bg-card);
+}
+
+#setTheMinutes button:hover {
+    background-color: var(--bg-cardHover);
+}
+
+#cards {
+    display: grid;
+    justify-self: center;
+    grid-template-columns: auto auto;
+    gap: 3.2rem;
+}
+
+.card, .cardSelected {
+    width: 13.8rem;
+    height: 15.2rem;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.4rem;
+}
+
+.card input {
+    margin-top: 3.2rem;
+    max-width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.card input::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    cursor: pointer;
+    background: var(--fc-timer);
+    border-radius: 2px;
+    border: 0px solid #000101;
+}
+
+.card input::-webkit-slider-thumb {
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 10px;
+    background: var(--fc-timer);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: var(--bg-cardHover);
+}
+
+.cardSelected {
+    background-color: var(--bg-cardSelected);
+}
+
+.cardSelected:hover {
+    background-color: var(--bg-cardSelectedHover)
+}
+
+.cardSelected img {
+    filter: brightness(0%) invert(100%);
+}
+
+.hide {
+    display: none;
+}
+
+#volume-control-forest {
+    z-index: 5;
+}
