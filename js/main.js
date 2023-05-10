@@ -76,10 +76,7 @@ btnToggleSetTheMinutes.addEventListener("click", controls.toggleSetTheMinutes)
 btnSetMinutes.addEventListener("click", controls.setMinutes)
 btnDarkMode.addEventListener("click", darkmode.toogleDarkMode)
 
-btnForest.addEventListener("click", () => {
-    cards.buttonForest()
-    console.log("ok")
-})
+btnForest.addEventListener("click", cards.buttonForest)
 btnRain.addEventListener("click", cards.buttonRain)
 btnCoffeeShop.addEventListener("click", cards.buttonCoffeeShop)
 btnFireplace.addEventListener("click", cards.buttonFireplace)

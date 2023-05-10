@@ -29,7 +29,7 @@ export function Timer({
     function startTimer() {
         timerTimeOut = setTimeout(function() {
             if(seconds <=0) {
-                seconds = 5
+                seconds = 60
     
                 minutes--
                 dialMinutes.textContent = String(minutes).padStart(2, "0")
