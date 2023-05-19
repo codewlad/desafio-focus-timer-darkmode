@@ -1,6 +1,5 @@
 (function (workerScript) {
 	if (!/MSIE 10/i.test (navigator.userAgent)) {
-		console.log("hacktimer ok")
 		try {
 			var blob = new Blob (["\
 var fakeIdToId = {};\
