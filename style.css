@@ -1,5 +1,8 @@
 :root {
     font-size: 62.5%;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
 
     --fc-timer: #323238;
     --bg-card: #E1E1E6;
@@ -11,6 +14,9 @@
 
 .darkMode:root {
     font-size: 62.5%;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
 
     --fc-timer: #FFF;
     --bg-card: #29292E;
@@ -38,27 +44,45 @@ body {
     background-color: var(--bg-body);
 }
 
-header {
-    position: absolute;
-    top: 6.4rem;
-    right: 6.4rem;
+#app {
+    margin: 0 auto;
+    height: 100vh;
+    min-height: 45rem;
+    padding: 2.5rem;
+    display: flex;
+    place-content: center;
+}
+
+h1 {
+    color: var(--fc-timer)
 }
 
 main {
     display: grid;
-    grid-template-columns: 50% 50%;
-    height: 100vh;
-    max-width: 100rem;
+    gap: 2rem 4rem;
+    grid-template-areas:
+    "header header"
+    "wrappedtimer cards";
     place-content: center;
-    margin: 0 auto;
+    
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.4rem;
 }
 
 #wrapperTimer {
-    display: grid;
-    justify-self: center;
-    place-content: center;
+    grid-area: wrappedtimer;
+    
+    display: flex;
+    flex-direction: column;
     max-width: 32rem;
-    width: 100%;
+    justify-content: center;
+    justify-self: left;
 }
 
 #timer {
@@ -72,7 +96,7 @@ main {
 
 #controls {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -137,10 +161,13 @@ main {
 }
 
 #cards {
-    display: grid;
-    justify-self: center;
-    grid-template-columns: auto auto;
-    gap: 3.2rem;
+    grid-area: cards;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 32rem;
+    justify-content: right;
+    justify-self: right;
 }
 
 .card, .cardSelected {
@@ -212,4 +239,53 @@ main {
 
 #volume-control-forest {
     z-index: 5;
+}
+
+@media only screen and (max-width: 730px) {
+    body {
+        min-width: 37rem;
+    }
+
+    #app {
+        margin: 0 auto;
+        height: auto;
+        padding: 2.5rem;
+        display: flex;
+    }
+    
+    main {
+        place-content: start;
+        display: flex;
+        flex-direction: column; 
+    }
+    
+    header {
+        grid-area: header;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    #wrapperTimer {
+        grid-area: wrappedtimer;
+        
+        display: flex;
+        flex-direction: column;
+        max-width: 32rem;
+        justify-content: center;
+        justify-self: left;
+        margin-bottom: 3rem;
+    }
+
+    #cards {
+        grid-area: cards;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4rem 3rem;
+        max-width: 32rem;
+        justify-content: space-between;
+        justify-self: right;
+
+    }
 }

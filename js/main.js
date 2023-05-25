@@ -115,3 +115,17 @@ sliderCoffeeShop.addEventListener("change", function(e) { sounds.soundCoffeeShop
 sliderFireplace.addEventListener("mouseover", removeCardEvent)
 sliderFireplace.addEventListener("mouseout", addCardEvent)
 sliderFireplace.addEventListener("change", function(e) { sounds.soundFireplace.volume = e.currentTarget.value / 100; })
+
+function alignMain() {
+    var screenHeight = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+   
+    if(screenHeight > 450) {
+        document.querySelector('main').style.placeContent = "center";
+    } else {
+        document.querySelector('main').style.placeContent = "start";
+    }
+}
+
+window.addEventListener("resize", alignMain);
