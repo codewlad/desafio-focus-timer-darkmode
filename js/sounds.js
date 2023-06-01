@@ -3,7 +3,7 @@ const soundRain = new Audio("./assets/sounds/rain.wav")
 const soundCoffeeShop = new Audio("./assets/sounds/coffeeshop.wav")
 const soundFireplace = new Audio("./assets/sounds/fireplace.wav")
 const soundButtonPress = new Audio("./assets/sounds/audios_button-press.wav")
-const soundKichenTimer = new Audio("./assets/sounds/audios_ kitchen-timer.mp3")
+const soundKichenTimer = new Audio("./assets/sounds/audios_kitchen-timer.mp3")
 
 export function Sounds() {
     function stopSounds() {
