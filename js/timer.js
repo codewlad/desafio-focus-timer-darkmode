@@ -39,8 +39,7 @@ export function Timer({
     
             if(minutes <= 0 && seconds <= 0) {
                 resetTimer()
-                soundKichenTimer.play()
-                return 
+                return soundKichenTimer.play()                 
             }
 
             startTimer()      
