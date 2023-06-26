@@ -12,11 +12,11 @@ export function Timer({
         minutes = Number(dialMinutes.textContent)
         seconds = Number(dialSeconds.textContent)
     }
-    
+
     function checkingTimer() {
         return (minutes == 0 && seconds == 0) ? false : true
     }
-    
+
     function setTimer() {
         stopTimer()
         minutes = inputMinutes.value
@@ -25,29 +25,31 @@ export function Timer({
         dialMinutes.textContent = String(minutes).padStart(2, "0")
         dialSeconds.textContent = String(seconds).padStart(2, "0")
     }
-    
+
     function startTimer() {
-        timerTimeOut = setTimeout(function() {
-            if(seconds <=0) {
+        timerTimeOut = setTimeout(function () {
+            if (seconds <= 0) {
                 seconds = 60
-    
+
                 minutes--
                 dialMinutes.textContent = String(minutes).padStart(2, "0")
             }
             seconds--
             dialSeconds.textContent = String(seconds).padStart(2, "0")
-    
-            if(minutes <= 0 && seconds <= 0) {
+
+            if (minutes <= 0 && seconds <= 0) {
+                clearTimeout(timerTimeOut)
                 resetTimer()
-                return soundKichenTimer.play()                 
+                soundKichenTimer.play()
+                return
             }
 
-            startTimer()      
+            startTimer()
         }, 1000)
     }
 
     function increaseTimer() {
-        if(minutes >= 55) {
+        if (minutes >= 55) {
             minutes = 60
             newMinute = minutes
             dialMinutes.textContent = String(minutes).padStart(2, "0")
@@ -60,7 +62,7 @@ export function Timer({
     }
 
     function decreaseTimer() {
-        if(minutes < 5) {
+        if (minutes < 5) {
             minutes = 0
             newMinute = 0
             stopTimer()
@@ -71,7 +73,7 @@ export function Timer({
         newMinute = minutes
         dialMinutes.textContent = String(minutes).padStart(2, "0")
     }
-    
+
     function pauseTimer() {
         clearInterval(timerTimeOut)
     }
@@ -81,7 +83,7 @@ export function Timer({
         resetTimer()
     }
 
-    function resetTimer () {
+    function resetTimer() {
         minutes = newMinute
         seconds = 0
         dialMinutes.textContent = String(newMinute).padStart(2, "0")
