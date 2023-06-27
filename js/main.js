@@ -5,7 +5,7 @@ import { Cards } from "./cards.js"
 import { Sounds } from "./sounds.js"
 import { DarkMode } from "./darkmode.js"
 
-const { 
+const {
     btnPlay,
     btnPause,
     btnStop,
@@ -32,7 +32,7 @@ const darkmode = DarkMode({
 
 const sounds = Sounds()
 
-const cards = Cards ({
+const cards = Cards({
     btnForest,
     btnRain,
     btnCoffeeShop,
@@ -44,12 +44,12 @@ const cards = Cards ({
     playSoundFireplace: sounds.playSoundFireplace
 })
 
-const timer = Timer ({
+const timer = Timer({
     dialMinutes,
     dialSeconds,
     btnPlay,
     btnPause,
-    soundKichenTimer: sounds.soundKichenTimer
+    soundKitchenTimer: sounds.soundKitchenTimer
 })
 
 const controls = Controls({
@@ -102,26 +102,26 @@ sounds.soundFireplace.volume = 0.5
 
 sliderForest.addEventListener("mouseover", removeCardEvent)
 sliderForest.addEventListener("mouseout", addCardEvent)
-sliderForest.addEventListener("change", function(e) { sounds.soundForest.volume = e.currentTarget.value / 100; })
+sliderForest.addEventListener("change", function (e) { sounds.soundForest.volume = e.currentTarget.value / 100; })
 
 sliderRain.addEventListener("mouseover", removeCardEvent)
 sliderRain.addEventListener("mouseout", addCardEvent)
-sliderRain.addEventListener("change", function(e) { sounds.soundRain.volume = e.currentTarget.value / 100; })
+sliderRain.addEventListener("change", function (e) { sounds.soundRain.volume = e.currentTarget.value / 100; })
 
 sliderCoffeeShop.addEventListener("mouseover", removeCardEvent)
 sliderCoffeeShop.addEventListener("mouseout", addCardEvent)
-sliderCoffeeShop.addEventListener("change", function(e) { sounds.soundCoffeeShop.volume = e.currentTarget.value / 100; })
+sliderCoffeeShop.addEventListener("change", function (e) { sounds.soundCoffeeShop.volume = e.currentTarget.value / 100; })
 
 sliderFireplace.addEventListener("mouseover", removeCardEvent)
 sliderFireplace.addEventListener("mouseout", addCardEvent)
-sliderFireplace.addEventListener("change", function(e) { sounds.soundFireplace.volume = e.currentTarget.value / 100; })
+sliderFireplace.addEventListener("change", function (e) { sounds.soundFireplace.volume = e.currentTarget.value / 100; })
 
 function alignMain() {
     var screenHeight = window.innerHeight
         || document.documentElement.clientHeight
         || document.body.clientHeight;
-   
-    if(screenHeight > 450) {
+
+    if (screenHeight > 450) {
         document.querySelector('main').style.placeContent = "center";
     } else {
         document.querySelector('main').style.placeContent = "start";

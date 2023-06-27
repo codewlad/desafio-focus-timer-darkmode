@@ -5,8 +5,12 @@ export function Timer({
     dialSeconds,
     btnPlay,
     btnPause,
-    soundKichenTimer,
+    soundKitchenTimer,
 }) {
+
+    function kitchenTimer() {
+        soundKitchenTimer.play()
+    }
 
     function getTimer() {
         minutes = Number(dialMinutes.textContent)
@@ -40,7 +44,7 @@ export function Timer({
             if (minutes <= 0 && seconds <= 0) {
                 clearTimeout(timerTimeOut)
                 resetTimer()
-                soundKichenTimer.play()
+                kitchenTimer()
                 return
             }
 
